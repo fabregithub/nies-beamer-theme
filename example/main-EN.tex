@@ -1,0 +1,114 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[aspectratio=169]{beamer}
+
+\usepackage{amssymb} %maths
+\usepackage{amsmath} %maths
+
+\usepackage{lipsum}
+
+% to use non-standard font
+\usepackage[utf8]{inputenc} %useful to type directly 
+%\usepackage{zxjatype}
+\usepackage{fontspec}
+\usepackage[math-style=TeX]{unicode-math}
+
+% to ensure that beamer does not meddle with the fonts we use
+%\usefonttheme{professionalfonts}
+
+% our main font
+\setmainfont[Ligatures=TeX,SmallCapsFeatures={Letters=SmallCaps}]{Lato}
+\setmathfont[math-style=ISO,bold-style=ISO,vargreek-shape=TeX]{Lete Sans Math}
+%\setmathfont[math-style=ISO,bold-style=ISO]{Lete Sans Math}
+
+
+\usetheme{NIES}
+
+%\graphicspath{{images/}}
+
+\title{My Presentation}
+\subtitle{Subtitle here}
+\author{Author Name}
+\institute{Affiliation(s)}
+\date{\today}
+
+\begin{document}
+
+\titleframe
+
+\begin{frame}[t]{Slide with Lists}
+The National Institute for Environmental Studies (NIES) was established in 1974 as a focal point for environmental research in Japan.
+	\begin{itemize}
+		\item NIES in figures
+			\begin{itemize}
+				\item \textbf{July 1971}: Environment Agency established
+				\item \textbf{November 1971}: NIES Founding Committee established
+				\item \textbf{March 1974}: National Institute for Environmental Studies established
+				\item \textbf{April 1985}: Emperor Showa visits NIES
+			\end{itemize}
+		\item Further history
+			\begin{itemize}
+				\item \textbf{July 1990}: Restructuring of NIES to include global environmental research
+				\item \textbf{October 1990}: Center for Global Environmental Research established
+				\item \textbf{January 2001}: Environment Agency becomes Ministry of the Environment. Waste Management Division established at NIES
+				\item \textbf{April 2001}: NIES established as an incorporated administrative agency. First five-year plan (2001–2005) commences List of Independent Administrative Institutions (Japan)
+			\end{itemize}
+		\item Credits: \url{https://www.nies.go.jp/index-e.html}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Blocks}
+	%\framesubtitle{This is a subtitle}
+	\begin{block}{Standard Block}
+		This is a standard block.
+	\end{block}
+	
+	\begin{exampleblock}{Example Block}
+		This is an example block.
+	\end{exampleblock}
+	
+	\begin{alertblock}{Alert Block}
+		This is an alert block.
+	\end{alertblock}
+\end{frame}
+
+\begin{frame}[t]{Math}
+	Bayesian theorem is one of the most useful tools in modern epidemiology.
+	\begin{align*}
+		P(A | B) &= \frac{P(B | A)\cdot P(A)}{P(B)} \\
+		\intertext{where}\\
+		A,B &= \text{events}\\
+		P(A | B) &= \text{probability of A given B is true}\\
+		P(B | A) &= \text{probability of B given A is true}\\
+		P(A),P(B) &= \text{independent probabilities of A and B}
+	\end{align*}
+
+\end{frame}
+
+\begin{frame}[t]{Two Columns}
+	We can also add two columns in the slides.
+	\begin{columns}[t]
+		\begin{column}[T]{0.4\textwidth}
+			\lipsum[1][1-2]
+			\vspace{1em}
+			\begin{block}{Block}
+				I am a block in a column.
+			\end{block}
+		\end{column}
+		\begin{column}[T]{0.4\textwidth}
+			\begin{itemize}
+				\item In this column,
+				\item we just add the
+				\item bullet points.
+			\end{itemize}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\begin{frame}[t]{Acknowledgements}
+This theme is inspired by Flip theme (creator: Flip Tanedo). The official beamer user guide was also very handy during the development.
+\end{frame}
+
+
+\end{document}

@@ -1,0 +1,114 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[aspectratio=169]{beamer}
+
+\usepackage{amssymb} %maths
+\usepackage{amsmath} %maths
+
+\usepackage{lipsum}
+
+% to use non-standard font
+\usepackage[utf8]{inputenc} %useful to type directly 
+\usepackage{zxjatype}
+\usepackage{fontspec}
+\usepackage[math-style=TeX]{unicode-math}
+\setmainfont[Ligatures=TeX,mallCapsFeatures={Letters=SmallCaps}]{Lato}
+\setmathfont[math-style=ISO,bold-style=ISO,vargreek-shape=TeX]{Lete Sans Math}
+%\setsansfont[Ligatures=TeX]{TeX Gyre Heros}
+\setjamainfont{Noto Sans JP}
+%\setjasansfont{IPAexGothic}
+%\setjamonofont{IPAexGothic}
+\usepackage{xltxtra}
+
+%\setmathfont[math-style=ISO,bold-style=ISO]{Lete Sans Math}
+
+
+\usetheme{NIES}
+
+%\graphicspath{{images/}}
+
+\title{プレゼンテーション}
+\subtitle{副題}
+\author{著者氏名}
+\institute{所属}
+\date{\today}
+
+\begin{document}
+
+\titleframe
+
+\begin{frame}[t]{リスト}
+国立研究開発法人国立環境研究所は、1974年に設置された環境問題に関する公的研究機関である。
+	\begin{itemize}
+		\item 年表
+			\begin{itemize}
+				\item \textbf{1971年7月}: 環境庁設置
+				\item \textbf{1973年3月}: 国立公害研究所設置
+				\item \textbf{1990年7月}: 国立環境研究所に改組
+				\item \textbf{2001年1月}: 環境省発足
+			\end{itemize}
+		\item さらなる年表
+			\begin{itemize}
+				\item \textbf{2015年4月}: 国立研究開発法人国立環境研究所に改称
+				\item \textbf{2016年4月}: 福島支部を開設
+				\item \textbf{2017年4月}: 琵琶湖分室を滋賀県琵琶湖環境科学研究センター内に設置
+			\end{itemize}
+		\item Credits: \url{https://www.nies.go.jp}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{ブロック}
+	%\framesubtitle{This is a subtitle}
+	\begin{block}{標準ブロック}
+		標準ブロックです。
+	\end{block}
+	
+	\begin{exampleblock}{例示ブロック}
+		例示のブロックです。
+	\end{exampleblock}
+	
+	\begin{alertblock}{強調ブロック}
+		強調時のブロックです。
+	\end{alertblock}
+\end{frame}
+
+\begin{frame}[t]{数式}
+	ベイズ理論は近代疫学の最も便利なツールの一つです。
+	\begin{align*}
+		P(A | B) &= \frac{P(B | A)\cdot P(A)}{P(B)} \\
+		\intertext{ここで}\\
+		A,B &= \text{事象}\\
+		P(A | B) &= \text{Bが真の時のAの起こる確率}\\
+		P(B | A) &= \text{Aが真の時のBの起こる確率}\\
+		P(A),P(B) &= \text{互いに独立なAまたはBの起こる確率}
+	\end{align*}
+
+\end{frame}
+
+\begin{frame}[t]{二段組み}
+	スライドの中で、二段組みもできます。
+	\begin{columns}[t]
+		\begin{column}[T]{0.4\textwidth}
+			\lipsum[1][1-2]
+			\vspace{1em}
+			\begin{block}{ブロック}
+				これはブロックです。
+			\end{block}
+		\end{column}
+		\begin{column}[T]{0.4\textwidth}
+			\begin{itemize}
+				\item 項目1
+				\item 項目2
+				\item 項目3
+			\end{itemize}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\begin{frame}[t]{謝辞}
+謝辞です。
+\end{frame}
+
+
+\end{document}

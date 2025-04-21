@@ -1,0 +1,97 @@
+%% ----------------------------------------------------------------------------
+%% Package Name: beamerouterthemeNIES.sty
+%% License: CC BY-NC-ND 4.0
+%%
+%% This work is licensed under the Creative Commons Attribution-NonCommercial-
+%% NoDerivatives 4.0 International License.
+%%
+%% You are free to:
+%% - Share — copy and redistribute the material in any medium or format
+%%
+%% Under the following terms:
+%% - Attribution — You must give appropriate credit, provide a link to the
+%%   license, and indicate if changes were made. You may do so in any
+%%   reasonable manner, but not in any way that suggests the licensor endorses
+%%   you or your use.
+%% - NonCommercial — You may not use the material for commercial purposes.
+%% - NoDerivatives — If you remix, transform, or build upon the material,
+%%   you may not distribute the modified material.
+%%
+%% Full license text:
+%%   https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode
+%%
+%% Copyright © 2025 Shoji  F. Nakayama
+%% ----------------------------------------------------------------------------
+\RequirePackage{tikz}
+
+\mode<presentation>
+% Background for normal frames
+\setbeamertemplate{background canvas}{
+  \tikz[remember picture,overlay] 
+    \node[anchor=north west, inner sep=0pt] at (current page.north west) {
+      \includegraphics[width=\paperwidth]{images/nies-bg.png}
+    };
+}
+
+% Empty header
+\setbeamertemplate{headline}{}
+%
+%% Footer with frame number
+\setbeamertemplate{footline}
+{%
+  \leavevmode%
+  \hbox{%
+    \begin{beamercolorbox}[wd=\paperwidth,ht=2.25ex,dp=1ex,rightskip=1em]{footline}%
+      \hfill%
+      \usebeamercolor[fg]{page number in head/foot}%
+      \usebeamerfont{page number in head/foot}%
+      \insertframenumber{} / \inserttotalframenumber%
+      \hspace*{1em}%
+    \end{beamercolorbox}%
+  }%
+}
+
+% Frame title
+\setbeamertemplate{frametitle}
+{%
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[anchor=north west, xshift=1em, yshift=-0.2cm] at (current page.north west) {
+      \begin{beamercolorbox}[wd=0.8\paperwidth,ht=2ex,dp=1ex,left]{frametitle}
+        \usebeamerfont{frametitle}\insertframetitle%
+        \ifx\insertframesubtitle\@empty%
+        \else%
+          \\[-0.8ex]\usebeamerfont{framesubtitle}\insertframesubtitle%
+        \fi%
+      \end{beamercolorbox}
+    };
+  \end{tikzpicture}\vspace{1.5\baselineskip}
+}
+
+% customisation for the title page
+\setbeamertemplate{title page}
+{
+        \usebeamerfont{title}{\usebeamercolor[fg]{title}\inserttitle}\par
+        \medskip
+        \usebeamerfont{subtitle}{\usebeamercolor[fg]{subtitle}\insertsubtitle}\par
+        \bigskip
+        \usebeamerfont{date}\insertdate\par
+        \bigskip
+        \usebeamerfont{author}\insertauthor\par
+        \medskip
+        \usebeamerfont{institute}\insertinstitute\par
+}
+
+% Custom title page frame macro
+\newcommand{\titleframe}{
+  \begingroup
+    \setbeamertemplate{background canvas}{
+      \tikz[remember picture,overlay] \node[anchor=north east, inner sep=0pt] at (current page.north east) {
+        \includegraphics[height=\paperheight]{images/nies-title.png}
+      };
+    }
+    \begin{frame}[plain,noframenumbering]
+      \titlepage
+    \end{frame}
+  \endgroup
+}
+\mode<all>
