@@ -36,7 +36,7 @@
 % Empty header
 \setbeamertemplate{headline}{}
 %
-%% Footer with frame number
+% Footer with frame number
 \setbeamertemplate{footline}
 {%
   \leavevmode%
@@ -50,6 +50,27 @@
     \end{beamercolorbox}%
   }%
 }
+%\newcommand{\insertshortfootnote}{}
+%\newcommand{\setfootlinefootnote}[1]{\def\insertshortfootnote{#1}}
+%\newcommand{\clearfootlinefootnote}{\def\insertshortfootnote{}}
+%
+%\setbeamertemplate{footline}
+%{%
+%  \leavevmode%
+%  \hbox{%
+%    \begin{beamercolorbox}[wd=\paperwidth,ht=2.5ex,dp=1ex,sep=0.3em]{footline}%
+%      \usebeamerfont{footline}%
+%      \hbox to \paperwidth{%
+%        \insertshortfootnote%
+%        \hfill%
+%        \usebeamercolor[fg]{page number in head/foot}%
+%        \usebeamerfont{page number in head/foot}%
+%        \insertframenumber{} / \inserttotalframenumber%
+%        \hspace*{1em}%
+%      }%
+%    \end{beamercolorbox}%
+%  }%
+%}
 
 % Frame title
 \setbeamertemplate{frametitle}
