@@ -23,6 +23,7 @@
 %% Copyright © 2025 Shoji  F. Nakayama
 %% ----------------------------------------------------------------------------
 \RequirePackage{tikz}
+\RequirePackage[absolute,overlay]{textpos}
 
 \mode<presentation>
 % Background for normal frames
@@ -50,27 +51,6 @@
     \end{beamercolorbox}%
   }%
 }
-%\newcommand{\insertshortfootnote}{}
-%\newcommand{\setfootlinefootnote}[1]{\def\insertshortfootnote{#1}}
-%\newcommand{\clearfootlinefootnote}{\def\insertshortfootnote{}}
-%
-%\setbeamertemplate{footline}
-%{%
-%  \leavevmode%
-%  \hbox{%
-%    \begin{beamercolorbox}[wd=\paperwidth,ht=2.5ex,dp=1ex,sep=0.3em]{footline}%
-%      \usebeamerfont{footline}%
-%      \hbox to \paperwidth{%
-%        \insertshortfootnote%
-%        \hfill%
-%        \usebeamercolor[fg]{page number in head/foot}%
-%        \usebeamerfont{page number in head/foot}%
-%        \insertframenumber{} / \inserttotalframenumber%
-%        \hspace*{1em}%
-%      }%
-%    \end{beamercolorbox}%
-%  }%
-%}
 
 % Frame title
 \setbeamertemplate{frametitle}
@@ -114,5 +94,14 @@
       \titlepage
     \end{frame}
   \endgroup
+}
+
+\renewcommand{\familydefault}{\rmdefault} % or \sfdefault
+\renewcommand\footnoterule{}
+\newcommand\ftnote[1]{%
+	\begin{textblock*}{\linewidth}(20pt, 248pt)
+		{\color{gray}
+		\scriptsize #1}
+	\end{textblock*}
 }
 \mode<all>
