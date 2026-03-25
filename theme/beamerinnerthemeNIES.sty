@@ -27,6 +27,7 @@
 
 \mode<presentation>
 
+% Itemize
 \defbeamertemplate{itemize item}{circ}%
 {\small\raise.2ex\hbox{\color{navyblue}$\bullet$}}
 \defbeamertemplate{itemize subitem}{circ}%
@@ -38,5 +39,10 @@
 \setlist[itemize,1]{label=\usebeamertemplate{itemize item}, itemsep=4pt}
 \setlist[itemize,2]{label=\usebeamertemplate{itemize subitem}, itemsep=2pt}
 \setlist[itemize,3]{label=\usebeamertemplate{itemize subsubitem}, itemsep=1pt}
+
+% Enumerate
+\setlist[enumerate,1]{label=\color{navyblue}\makebox[1.5em][r]{\arabic*.}, itemsep=4pt}
+\setlist[enumerate,2]{label=\color{navyblue}\makebox[1.5em][r]{\alph*.}, itemsep=2pt}
+\setlist[enumerate,3]{label=\color{navyblue}\makebox[1.5em][r]{\roman*.}, itemsep=1pt}
 
 \mode<all>
