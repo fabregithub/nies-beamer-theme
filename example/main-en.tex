@@ -1,7 +1,7 @@
 %!TEX TS-program = xelatex
 %!TEX encoding = UTF-8 Unicode
 
-\documentclass[aspectratio=169]{beamer}
+\documentclass[aspectratio=169,t]{beamer}
 
 \usepackage{amssymb} %maths
 \usepackage{amsmath} %maths
@@ -37,6 +37,11 @@
 
 \titleframe
 
+\begin{frame}[t]{Outline}
+	\tableofcontents
+\end{frame}
+
+\section{Lists}
 \begin{frame}[t]{Slide with Lists}
 The National Institute for Environmental Studies (NIES) was established in 1974 as a focal point for environmental research in Japan.
 	\begin{itemize}
@@ -58,6 +63,7 @@ The National Institute for Environmental Studies (NIES) was established in 1974 
 	\end{itemize}
 \end{frame}
 
+\section{Blocks}
 \begin{frame}[t]{Blocks}
 	%\framesubtitle{This is a subtitle}
 	\begin{block}{Standard Block}
@@ -73,6 +79,7 @@ The National Institute for Environmental Studies (NIES) was established in 1974 
 	\end{alertblock}
 \end{frame}
 
+\section{Math}
 \begin{frame}[t]{Math}
 	Bayesian theorem is one of the most useful tools in modern epidemiology.
 	\begin{align*}
@@ -86,6 +93,7 @@ The National Institute for Environmental Studies (NIES) was established in 1974 
 
 \end{frame}
 
+\section{Two Columns}
 \begin{frame}[t]{Two Columns}
 	We can also add two columns in the slides.
 	\begin{columns}[t]
@@ -106,6 +114,7 @@ The National Institute for Environmental Studies (NIES) was established in 1974 
 	\end{columns}
 \end{frame}
 
+\section{Acknowledgements}
 \begin{frame}[t]{Acknowledgements}
 This theme is inspired by Flip theme (creator: Flip Tanedo). The official beamer user guide was also very handy during the development.
 \end{frame}

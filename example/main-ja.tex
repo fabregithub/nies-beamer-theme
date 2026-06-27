@@ -1,7 +1,7 @@
 %!TEX TS-program = xelatex
 %!TEX encoding = UTF-8 Unicode
 
-\documentclass[aspectratio=169]{beamer}
+\documentclass[aspectratio=169,t]{beamer}
 
 \usepackage{amssymb} %maths
 \usepackage{amsmath} %maths
@@ -13,7 +13,7 @@
 \usepackage{zxjatype}
 \usepackage{fontspec}
 \usepackage[math-style=TeX]{unicode-math}
-\setmainfont[Ligatures=TeX,mallCapsFeatures={Letters=SmallCaps}]{Lato}
+\setmainfont[Ligatures=TeX,SmallCapsFeatures={Letters=SmallCaps}]{Lato}
 \setmathfont[math-style=ISO,bold-style=ISO,vargreek-shape=TeX]{Lete Sans Math}
 %\setsansfont[Ligatures=TeX]{TeX Gyre Heros}
 \setjamainfont{Noto Sans JP}
@@ -38,6 +38,11 @@
 
 \titleframe
 
+\begin{frame}[t]{目次}
+	\tableofcontents
+\end{frame}
+
+\section{リスト}
 \begin{frame}[t]{リスト}
 国立研究開発法人国立環境研究所は、1974年に設置された環境問題に関する公的研究機関である。
 	\begin{itemize}
@@ -58,6 +63,7 @@
 	\end{itemize}
 \end{frame}
 
+\section{ブロック}
 \begin{frame}[t]{ブロック}
 	%\framesubtitle{This is a subtitle}
 	\begin{block}{標準ブロック}
@@ -73,6 +79,7 @@
 	\end{alertblock}
 \end{frame}
 
+\section{数式}
 \begin{frame}[t]{数式}
 	ベイズ理論は近代疫学の最も便利なツールの一つです。
 	\begin{align*}
@@ -86,6 +93,7 @@
 
 \end{frame}
 
+\section{二段組み}
 \begin{frame}[t]{二段組み}
 	スライドの中で、二段組みもできます。
 	\begin{columns}[t]
@@ -106,6 +114,7 @@
 	\end{columns}
 \end{frame}
 
+\section{謝辞}
 \begin{frame}[t]{謝辞}
 謝辞です。
 \end{frame}
