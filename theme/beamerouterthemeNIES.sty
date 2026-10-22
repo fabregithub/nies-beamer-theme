@@ -69,11 +69,22 @@
 }
 
 % customisation for the title page
+% Width of the title-page text block. Set it in a deck that writes its
+% title without hard \\ breaks, e.g. \setlength{\niestitlewidth}{0.62\textwidth}.
+\newlength{\niestitlewidth}
+\AtBeginDocument{\ifdim\niestitlewidth=0pt \setlength{\niestitlewidth}{\textwidth}\fi}
 \setbeamertemplate{title page}
 {
-        \usebeamerfont{title}{\usebeamercolor[fg]{title}\inserttitle}\par
+        % \par sits inside each group so a size set in \title{} (e.g.
+        % \fontsize{12pt}{14pt}) also sets the line spacing; \raggedright so
+        % titles wrap naturally without hard \\ breaks.
+        % \niestitlewidth (default: full width, i.e. no change) narrows the
+        % title block so naturally wrapped titles stay clear of the green band.
+        \raggedright\hyphenpenalty=10000 \exhyphenpenalty=10000 % no hyphenated titles
+        \rightskip=\dimexpr\linewidth-\niestitlewidth\relax plus 1fil
+        {\usebeamerfont{title}\usebeamercolor[fg]{title}\inserttitle\par}
         \medskip
-        \usebeamerfont{subtitle}{\usebeamercolor[fg]{subtitle}\insertsubtitle}\par
+        {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}
         \bigskip
         \usebeamerfont{date}\insertdate\par
         \bigskip
