@@ -36,6 +36,15 @@
 
 % Empty header
 \setbeamertemplate{headline}{}
+
+% Optional section name beside the frame number: "Modifiable exposures | 7 / 14".
+% Same switch as the JECS theme, so a deck can use \showsectionname with either;
+% NIES has no headline, so it goes in the footline. Off by default, and nothing
+% is printed on a frame that is not inside a \section.
+\newif\ifbeamer@sectionname
+\beamer@sectionnamefalse
+\newcommand{\showsectionname}{\beamer@sectionnametrue}
+\newcommand{\hidesectionname}{\beamer@sectionnamefalse}
 %
 % Footer with frame number
 \setbeamertemplate{footline}
@@ -46,6 +55,9 @@
       \hfill%
       \usebeamercolor[fg]{page number in head/foot}%
       \usebeamerfont{page number in head/foot}%
+      \ifbeamer@sectionname
+        \ifx\insertsection\@empty\else\insertsection\hspace{1em}\textbar\hspace{1em}\fi
+      \fi
       \insertframenumber{} / \inserttotalframenumber%
       \hspace*{1em}%
     \end{beamercolorbox}%
